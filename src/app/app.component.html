@@ -1,0 +1,45 @@
+<!-- nav-bar -->
+<div class="nav">
+  <a routerLink="/app-home"><img src="assets/logo.png" alt="" class="logo"></a>
+  <div class="menu-icon" (click)="toggleSideNav()">
+    <!-- Use ngIf to display the menu icon or close button based on 'isNavOpen' -->
+    <div *ngIf="!isNavOpen">&#9776;</div>
+    <div *ngIf="isNavOpen" class="close-btn">&times;</div>
+  </div>
+  <ul class="list" [ngClass]="{'show-nav': isNavOpen}">
+    <li><a href="">Home</a></li>
+    <li><a href="">About Us</a></li>
+    <li><a routerLink="/contact-us">Contact Us</a></li>
+    <li><a href="https://www.facebook.com/profile.php?id=100095295576071&mibextid=ZbWKwL" target="_blank"
+        title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+    <li><a href="https://instagram.com/gmrktoursandtravels123?igshid=NGExMmI2YTkyZg==" target="_blank"
+        title="Instagram"><i class="fab fa-instagram"></i></a></li>
+  </ul>
+</div>
+
+
+<!-- Side Navigation -->
+<div class="side-nav" [ngClass]="{'show-side-nav': isNavOpen}">
+  <ul>
+    <li><a href=""><i class="fas fa-home"></i> &nbsp;Home</a></li>
+    <li><a href=""><i class="fas fa-info-circle"></i> &nbsp;About Us</a></li>
+    <li><a routerLink="/contact-us"><i class="fas fa-envelope"></i> &nbsp;Contact Us</a></li>
+    <li><a href="https://www.facebook.com/profile.php?id=100095295576071&mibextid=ZbWKwL" target="_blank" title=""><i
+          class="fab fa-facebook-f"></i> &nbsp;facebook</a></li>
+    <li><a href="https://instagram.com/gmrktoursandtravels123?igshid=NGExMmI2YTkyZg==" target="_blank" title=""><i
+          class="fab fa-instagram"></i> &nbsp;Instagram</a></li>
+  </ul>
+  <div>
+    <p>
+      <i class="fas fa-map-marker-alt"></i> Near Kavuri hills, Raj Kamal Road, Chinakakani Village, Managalagiri, Guntur
+      Dst.
+    </p>
+    <p>
+      <i class="fas fa-phone"></i> +91 6309754545
+    </p>
+    <p>
+      <i class="far fa-envelope"></i> gmrktourstravels@gmail.com
+    </p>
+  </div>
+</div>
+<router-outlet></router-outlet>

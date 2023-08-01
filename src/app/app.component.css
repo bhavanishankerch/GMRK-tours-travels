@@ -1,0 +1,177 @@
+.nav {
+    justify-content: space-around;
+    align-items: center;
+    background-color: white;
+    padding: 2px;
+    color: #fff;
+    display: flex;
+    z-index: 3;
+    width: 100%;
+    position: fixed; /* To fix the navbar position */
+    top: 0; /* To position it at the top */
+    transition: top 0.3s ease; /* Add a smooth transition effect */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Regular shadow */
+    backdrop-filter: blur(8px); /* Blur effect */
+  }
+  
+  .logo{
+    width: 120px;
+    left: 20px;
+    padding-right: 20px;
+    mix-blend-mode: multiply;
+  }
+  
+  .list {
+    list-style: none;
+    display: flex;
+    align-items: center;
+  }
+  .list a{
+    text-decoration: none;
+    padding: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    color:black;
+    display: flex;
+    margin-right: 70px;
+    transition: .5s;
+    font-size: 20px;
+    font-weight: bold;
+    
+  }
+  .list a {
+    text-decoration: none;
+    padding: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    display: inline-block;
+    margin-right: 30px;
+    font-size: 20px;
+    font-weight: bold;
+    position: relative;
+  }
+  
+  .list a::after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: -40px; 
+    left: 0;
+    width: 0; 
+    height: 3px;
+    background-color: #ff5722; 
+    transition: width 0.3s ease; 
+  }
+  
+  .list a:hover::after {
+    width: 100%; /* Expand the line to 100% width on hover */
+  }
+
+  /* Mobile Styles - Side Navigation */
+@media screen and (max-width: 768px) {
+    .nav {
+      flex-direction: row;
+      padding: 10px;
+    }
+    
+    .logo {
+      margin-bottom: 10px; /* Add some space below the logo */
+    }
+  
+    .list {
+      display: none; /* Hide the list items initially */
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      background-color: #f9f9f9;
+      position: absolute;
+      top: 56px;
+      left: 0;
+      z-index: 1;
+    }
+    
+    .list a {
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
+  
+    /* Show the side navigation when the menu icon is clicked */
+    .nav.show-nav .list {
+      display: flex;
+    }
+  
+    /* Style the menu icon */
+    .menu-icon {
+      max-width: 50px;
+      color: black;
+      font-size: 24px;
+      cursor: pointer;
+      margin-right: 15px;
+    }
+  }
+  
+  .close-btn {
+    font-size: 44px;
+    cursor: pointer;
+  }
+  
+  /* Desktop Styles */
+  @media screen and (min-width: 769px) {
+    .list a {
+      margin-right: 30px;
+    }
+  }
+  
+  /* Style for the side navigation */
+  .side-nav {
+    position: fixed;
+    top: 60px; /* Adjust the top position to leave margin above the side navigation */
+    right: -300px; /* Hide the side navigation by default (off-screen) */
+    width: 300px;
+    height: calc(100vh - 60px); /* Set the side navigation height to fill the viewport */
+    background-color: #f9f9f9;
+    background-size: 100% 100%; /* Fill the entire background vertically */
+    z-index: 2;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for a floating effect */
+    transition: right 0.3s ease; /* Transition the right position for animation */
+  }
+  
+  /* Show the side navigation */
+  .show-side-nav {
+    right: 0; /* Display the side navigation from the right when 'show-side-nav' class is present */
+  }
+  
+  /* Style the side navigation links */
+  .side-nav ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 80px;
+  }
+  
+  .side-nav li {
+    margin-bottom: 15px; /* Add spacing between each navigation item */
+  }
+  
+  .side-nav a {
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+    font-weight: bold;
+    display: block;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Hover effect on side navigation links */
+  .side-nav a:hover {
+    background-color: #f2f2f2;
+  }
+  
+  /* Desktop Styles - Hide side navigation on large screens */
+  @media screen and (min-width: 769px) {
+    .side-nav {
+      display: none; /* Hide the side navigation on larger screens */
+    }
+  }
+  
